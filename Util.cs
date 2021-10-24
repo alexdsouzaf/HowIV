@@ -13,8 +13,15 @@ namespace CRUDPadaria
     class Util
     {
         public static SqlConnection conexao { get; set; }
-        //private static string sConnectionString = "server = localhost; user id = root; database = db_how;  Password=usandopraestudar; ConvertZeroDateTime=True ";
-        private static string sConnectionStringDBHOW = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Directory.GetCurrentDirectory()}\DB_TESTE.mdf;Integrated Security=True";
+
+
+
+        /// <summary>
+        /// PARA USAR O BANCO LOCAL DÊ DUPLO CLIQUE EM DB_TESTE NO GERENCIADOR DE SOLUÇÕES, NO GERENCIADO DE SERVIDORES ENTRE NAS PROPRIEDADES DE DB_TESTE.
+        /// PEGUE A CADEIA DE CONEXAO SUBSTITUIA NA STRING ABAIXO.
+        /// </summary>
+        private static string sConnectionStringDBHOW = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Userwin\source\repos\HowIV\DB_TESTE.mdf;Integrated Security=True";
+        
         /// <summary>
         /// MENSAGEM DE RETORNO QUANDO UM ERRO REFERENTE AOS SQL ACONTECER
         /// </summary>
@@ -36,9 +43,17 @@ namespace CRUDPadaria
 
                 //string s = Directory.GetCurrentDirectory();                    
 
-                SqlCommand oComando = new SqlCommand(pComando, conexao);
+                SqlCommand oComando = new SqlCommand(pComando);
                 conexao.Open();
-                SqlDataReader oReader = oComando.ExecuteReader();                
+                oComando.Connection = conexao;
+                oComando.ExecuteNonQuery();
+                SqlDataReader oReader = oComando.ExecuteReader();
+
+                //SqlCommand oCmd = new SqlCommand(sCmd);
+                //Conexao.Open();
+                //oCmd.Connection = Conexao;
+                //oCmd.ExecuteNonQuery();
+                //leitor = oCmd.ExecuteReader();
                 return oReader;
 
 
