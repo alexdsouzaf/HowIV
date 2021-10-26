@@ -15,7 +15,6 @@ namespace CRUDPadaria
         public static SqlConnection conexao { get; set; }
 
 
-
         /// <summary>
         /// PARA USAR O BANCO LOCAL DÊ DUPLO CLIQUE EM DB_TESTE NO GERENCIADOR DE SOLUÇÕES, NO GERENCIADO DE SERVIDORES ENTRE NAS PROPRIEDADES DE DB_TESTE.
         /// PEGUE A CADEIA DE CONEXAO SUBSTITUIA NA STRING ABAIXO.
@@ -94,6 +93,11 @@ namespace CRUDPadaria
         public static void Invalidacoes( string pSbMensagem )
         {
             MessageBox.Show("Não foi possível continuar o processo por um ou mais motivos: \r\n" + pSbMensagem);
+        }
+
+        public static void AcaoConcluida()
+        {
+            MessageBox.Show("A ação foi executada com sucesso!");
         }
     }
 }

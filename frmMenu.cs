@@ -7,22 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CRUDPadaria;
-//using MySqlConnector;
 
-namespace Facul
+namespace HowIV
 {
     public partial class frmMenu : Form
     {
-        
-        
-        
         public frmMenu()
         {
             InitializeComponent();
         }
-
-
         private void frmMenu_Load(object sender, EventArgs e)
         {
             //grdMenu.Rows.Add("ESTOQUE");
@@ -31,12 +24,12 @@ namespace Facul
 
         private void grdMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             string sTela = grdMenu.CurrentCell.Value.ToString();
 
             if (sTela == "PRODUTO")
             {
-                frmProduto frmPro = new frmProduto();                
+                frmProduto frmPro = new frmProduto();
                 frmPro.Show();
             }
 
@@ -45,8 +38,6 @@ namespace Facul
             //    frmEstoque frmEst = new frmEstoque();
             //    frmEst.Show();                
             //}
-
-            
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿
-namespace CRUDPadaria
+namespace HowIV
 {
     partial class frmProduto
     {
@@ -20,7 +20,6 @@ namespace CRUDPadaria
             }
             base.Dispose(disposing);
         }
-
         #region Windows Form Designer generated code
 
         /// <summary>

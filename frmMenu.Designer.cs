@@ -1,5 +1,5 @@
 ﻿
-namespace Facul
+namespace HowIV
 {
     partial class frmMenu
     {
