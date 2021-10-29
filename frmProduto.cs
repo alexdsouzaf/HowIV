@@ -29,6 +29,7 @@ namespace HowIV
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             clsProduto oProduto = new clsProduto();
+            Util.bEhConsulta = true;
             var oRetorno = oProduto.ConsultarProduto(txtId.Text);
             grdProduto.Rows.Clear();
             while (oRetorno.Read())
@@ -43,7 +44,7 @@ namespace HowIV
                 linha.Cells[6].Value = oRetorno.GetInt32(6);
                 grdProduto.Rows.Add(linha);
             }
-            Util.AcaoConcluida();
+            //Util.AcaoConcluida();
             Util.conexao.Close();
         }
 
@@ -59,18 +60,31 @@ namespace HowIV
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
+            clsProduto oProduto = new clsProduto();
+            oProduto.AlterarProduto(txtId.Text, txtObs.Text, txtVal.Text);
             Util.AcaoConcluida();
             Util.conexao.Close();
+            LimparCampos();
         }
 
-        private void grdProduto_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+ 
+
+        private void LimparCampos()
         {
-            //TEM QUE ARRUAMR ISSO AQUI
-            //if (grdProduto.Columns.Contains("ID"))
-            //{
+            txtId.Clear();
+            txtDesc.Clear();
+            txtObs.Clear();
+            txtQuant.Clear();
+            txtData.Clear();
+            txtVal.Clear();
+            txtEst.Clear();
+        }
+
+        private void grdProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             LimparCampos();
             clsProduto oProduto = new clsProduto();
-            var oRetorno = oProduto.ConsultarProduto(txtId.Text);
+            var oRetorno = oProduto.ConsultarProduto(grdProduto.CurrentRow.Cells[0].Value.ToString());
 
             while (oRetorno.Read())
             {
@@ -87,19 +101,12 @@ namespace HowIV
             tabControl1.SelectedTab = tabPage2;
             btnAlterar.Visible = true;
             btnGravar.Visible = false;
-            //}
         }
 
-        private void LimparCampos()
+        private void tabPage1_Enter(object sender, EventArgs e)
         {
-            txtId.Clear();
-            txtDesc.Clear();
-            txtObs.Clear();
-            txtQuant.Clear();
-            txtData.Clear();
-            txtVal.Clear();
-            txtEst.Clear();
+            btnAlterar.Visible = false;
+            btnGravar.Visible = true;
         }
-    
     }
 }

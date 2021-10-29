@@ -28,7 +28,6 @@ namespace HowIV
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,7 +81,7 @@ namespace HowIV
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(584, 362);
+            this.tabControl1.Size = new System.Drawing.Size(501, 314);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -91,20 +90,21 @@ namespace HowIV
             this.tabPage1.Controls.Add(this.toolStrip1);
             this.tabPage1.Controls.Add(this.pnlGrid);
             this.tabPage1.Controls.Add(this.statusStrip1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(576, 334);
+            this.tabPage1.Size = new System.Drawing.Size(493, 288);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Consulta";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 25);
+            this.label1.Location = new System.Drawing.Point(7, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(532, 15);
+            this.label1.Size = new System.Drawing.Size(474, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "da pra pensar em colocar alguns filtros aqui em cima para poder fazer uma consult" +
     "a mais especifica";
@@ -114,16 +114,15 @@ namespace HowIV
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnConsultar});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 66);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 49);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(570, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(487, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // btnConsultar
             // 
             this.btnConsultar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
             this.btnConsultar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(62, 22);
@@ -134,9 +133,9 @@ namespace HowIV
             // 
             this.pnlGrid.Controls.Add(this.grdProduto);
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlGrid.Location = new System.Drawing.Point(3, 91);
+            this.pnlGrid.Location = new System.Drawing.Point(3, 74);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(570, 218);
+            this.pnlGrid.Size = new System.Drawing.Size(487, 189);
             this.pnlGrid.TabIndex = 2;
             // 
             // grdProduto
@@ -157,9 +156,9 @@ namespace HowIV
             this.grdProduto.Name = "grdProduto";
             this.grdProduto.ReadOnly = true;
             this.grdProduto.RowTemplate.Height = 25;
-            this.grdProduto.Size = new System.Drawing.Size(570, 218);
+            this.grdProduto.Size = new System.Drawing.Size(487, 189);
             this.grdProduto.TabIndex = 0;
-            this.grdProduto.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProduto_CellContentDoubleClick);
+            this.grdProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProduto_CellDoubleClick);
             // 
             // ID
             // 
@@ -174,7 +173,7 @@ namespace HowIV
             this.DES_PRODUTO.HeaderText = "Descrição";
             this.DES_PRODUTO.Name = "DES_PRODUTO";
             this.DES_PRODUTO.ReadOnly = true;
-            this.DES_PRODUTO.Width = 83;
+            this.DES_PRODUTO.Width = 80;
             // 
             // OBS
             // 
@@ -182,7 +181,7 @@ namespace HowIV
             this.OBS.HeaderText = "Observação";
             this.OBS.Name = "OBS";
             this.OBS.ReadOnly = true;
-            this.OBS.Width = 94;
+            this.OBS.Width = 90;
             // 
             // QTD_PRODUTO
             // 
@@ -215,9 +214,10 @@ namespace HowIV
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 309);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 263);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(570, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(487, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -244,10 +244,10 @@ namespace HowIV
             this.tabPage2.Controls.Add(this.txtObs);
             this.tabPage2.Controls.Add(this.txtDesc);
             this.tabPage2.Controls.Add(this.txtId);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(576, 334);
+            this.tabPage2.Size = new System.Drawing.Size(493, 288);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Cadastro";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -255,17 +255,17 @@ namespace HowIV
             // lblEst
             // 
             this.lblEst.AutoSize = true;
-            this.lblEst.Location = new System.Drawing.Point(473, 81);
+            this.lblEst.Location = new System.Drawing.Point(405, 70);
             this.lblEst.Name = "lblEst";
-            this.lblEst.Size = new System.Drawing.Size(49, 15);
+            this.lblEst.Size = new System.Drawing.Size(46, 13);
             this.lblEst.TabIndex = 14;
             this.lblEst.Text = "Estoque";
             // 
             // txtEst
             // 
-            this.txtEst.Location = new System.Drawing.Point(473, 99);
+            this.txtEst.Location = new System.Drawing.Point(405, 86);
             this.txtEst.Name = "txtEst";
-            this.txtEst.Size = new System.Drawing.Size(71, 23);
+            this.txtEst.Size = new System.Drawing.Size(61, 20);
             this.txtEst.TabIndex = 13;
             // 
             // toolStrip2
@@ -275,16 +275,15 @@ namespace HowIV
             this.btnGravar,
             this.btnAlterar,
             this.btnRemover});
-            this.toolStrip2.Location = new System.Drawing.Point(3, 306);
+            this.toolStrip2.Location = new System.Drawing.Point(3, 260);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(570, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(487, 25);
             this.toolStrip2.TabIndex = 12;
             this.toolStrip2.Text = "toolStrip2";
             // 
             // btnGravar
             // 
             this.btnGravar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.btnGravar.Image = ((System.Drawing.Image)(resources.GetObject("btnGravar.Image")));
             this.btnGravar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnGravar.Name = "btnGravar";
             this.btnGravar.Size = new System.Drawing.Size(45, 22);
@@ -294,7 +293,6 @@ namespace HowIV
             // btnAlterar
             // 
             this.btnAlterar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.btnAlterar.Image = ((System.Drawing.Image)(resources.GetObject("btnAlterar.Image")));
             this.btnAlterar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(46, 22);
@@ -305,7 +303,6 @@ namespace HowIV
             // btnRemover
             // 
             this.btnRemover.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            //this.btnRemover.Image = ((System.Drawing.Image)(resources.GetObject("btnRemover.Image")));
             this.btnRemover.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(58, 22);
@@ -315,108 +312,108 @@ namespace HowIV
             // lblObs
             // 
             this.lblObs.AutoSize = true;
-            this.lblObs.Location = new System.Drawing.Point(8, 80);
+            this.lblObs.Location = new System.Drawing.Point(7, 69);
             this.lblObs.Name = "lblObs";
-            this.lblObs.Size = new System.Drawing.Size(69, 15);
+            this.lblObs.Size = new System.Drawing.Size(65, 13);
             this.lblObs.TabIndex = 11;
             this.lblObs.Text = "Observação";
             // 
             // lblDatCadastro
             // 
             this.lblDatCadastro.AutoSize = true;
-            this.lblDatCadastro.Location = new System.Drawing.Point(476, 34);
+            this.lblDatCadastro.Location = new System.Drawing.Point(408, 29);
             this.lblDatCadastro.Name = "lblDatCadastro";
-            this.lblDatCadastro.Size = new System.Drawing.Size(81, 15);
+            this.lblDatCadastro.Size = new System.Drawing.Size(75, 13);
             this.lblDatCadastro.TabIndex = 10;
             this.lblDatCadastro.Text = "Data Cadastro";
             // 
             // lblVal
             // 
             this.lblVal.AutoSize = true;
-            this.lblVal.Location = new System.Drawing.Point(311, 34);
+            this.lblVal.Location = new System.Drawing.Point(267, 29);
             this.lblVal.Name = "lblVal";
-            this.lblVal.Size = new System.Drawing.Size(79, 15);
+            this.lblVal.Size = new System.Drawing.Size(70, 13);
             this.lblVal.TabIndex = 9;
             this.lblVal.Text = "Valor Unitário";
             // 
             // lblQuant
             // 
             this.lblQuant.AutoSize = true;
-            this.lblQuant.Location = new System.Drawing.Point(396, 34);
+            this.lblQuant.Location = new System.Drawing.Point(339, 29);
             this.lblQuant.Name = "lblQuant";
-            this.lblQuant.Size = new System.Drawing.Size(69, 15);
+            this.lblQuant.Size = new System.Drawing.Size(62, 13);
             this.lblQuant.TabIndex = 9;
             this.lblQuant.Text = "Quantidade";
             // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(63, 34);
+            this.lblDescricao.Location = new System.Drawing.Point(54, 29);
             this.lblDescricao.Name = "lblDescricao";
-            this.lblDescricao.Size = new System.Drawing.Size(58, 15);
+            this.lblDescricao.Size = new System.Drawing.Size(55, 13);
             this.lblDescricao.TabIndex = 8;
             this.lblDescricao.Text = "Descrição";
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(7, 34);
+            this.lblId.Location = new System.Drawing.Point(6, 29);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 15);
+            this.lblId.Size = new System.Drawing.Size(18, 13);
             this.lblId.TabIndex = 7;
             this.lblId.Text = "ID";
             // 
             // txtVal
             // 
-            this.txtVal.Location = new System.Drawing.Point(311, 52);
+            this.txtVal.Location = new System.Drawing.Point(267, 45);
             this.txtVal.Name = "txtVal";
-            this.txtVal.Size = new System.Drawing.Size(79, 23);
+            this.txtVal.Size = new System.Drawing.Size(68, 20);
             this.txtVal.TabIndex = 6;
             // 
             // txtData
             // 
             this.txtData.Enabled = false;
-            this.txtData.Location = new System.Drawing.Point(476, 52);
+            this.txtData.Location = new System.Drawing.Point(408, 45);
             this.txtData.Mask = "00/00/0000 90:00";
             this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(92, 23);
+            this.txtData.Size = new System.Drawing.Size(79, 20);
             this.txtData.TabIndex = 5;
             this.txtData.ValidatingType = typeof(System.DateTime);
             // 
             // txtQuant
             // 
-            this.txtQuant.Location = new System.Drawing.Point(396, 52);
+            this.txtQuant.Location = new System.Drawing.Point(339, 45);
             this.txtQuant.Name = "txtQuant";
-            this.txtQuant.Size = new System.Drawing.Size(71, 23);
+            this.txtQuant.Size = new System.Drawing.Size(61, 20);
             this.txtQuant.TabIndex = 4;
             // 
             // txtObs
             // 
-            this.txtObs.Location = new System.Drawing.Point(8, 99);
+            this.txtObs.Location = new System.Drawing.Point(7, 86);
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(459, 23);
+            this.txtObs.Size = new System.Drawing.Size(394, 20);
             this.txtObs.TabIndex = 3;
             // 
             // txtDesc
             // 
-            this.txtDesc.Location = new System.Drawing.Point(63, 52);
+            this.txtDesc.Location = new System.Drawing.Point(54, 45);
             this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(241, 23);
+            this.txtDesc.Size = new System.Drawing.Size(207, 20);
             this.txtDesc.TabIndex = 1;
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(7, 52);
+            this.txtId.Location = new System.Drawing.Point(6, 45);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(50, 23);
+            this.txtId.Size = new System.Drawing.Size(43, 20);
             this.txtId.TabIndex = 0;
             // 
             // frmProduto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 362);
+            this.ClientSize = new System.Drawing.Size(501, 314);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

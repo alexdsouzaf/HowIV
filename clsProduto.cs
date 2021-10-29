@@ -20,15 +20,15 @@ namespace CRUDPadaria
         /// <param name="pId"></param>
         /// <param name="pDescricao"></param>
         /// <param name="pValor"></param>
-        public void AlterarProduto(string pId, string pDescricao = "", string pValor = "")
+        public void AlterarProduto(string pId, string pObs = "", string pValor = "")
         {
             try
             {
                 StringBuilder sbSQL = new StringBuilder();
-                sbSQL.AppendLine("UPDATE PRODUTO");
-                sbSQL.AppendLine($"SET DES_PRODUTO = '{pDescricao}'");
-                sbSQL.AppendLine($"SET DES_PRODUTO = {pValor}");
-                sbSQL.AppendLine($"WHERE = {pId}");
+                sbSQL.AppendLine(" UPDATE PRODUTO ");
+                sbSQL.AppendLine($" SET OBS = '{pObs}' , ");
+                sbSQL.AppendLine($" VAL_UN = {pValor} ");
+                sbSQL.AppendLine($" WHERE ID = {pId} ");
 
                 Util.ExecutaSQL(sbSQL.ToString());
             }
@@ -129,7 +129,7 @@ namespace CRUDPadaria
                 if (clsValidacoesSQL.PermiteRemover(pId))
                 {
                     StringBuilder sbSQL = new StringBuilder();
-                    sbSQL.AppendLine("FROM PRODUTO DELETE");
+                    sbSQL.AppendLine("DELETE FROM PRODUTO");
                     sbSQL.AppendLine($"WHERE ID = {pId}");
 
                     Util.ExecutaSQL(sbSQL.ToString());

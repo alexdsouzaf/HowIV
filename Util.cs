@@ -14,7 +14,7 @@ namespace CRUDPadaria
     {
         public static SqlConnection conexao { get; set; }
 
-
+        public static bool bEhConsulta = false;
         /// <summary>
         /// PARA USAR O BANCO LOCAL DÊ DUPLO CLIQUE EM DB_TESTE NO GERENCIADOR DE SOLUÇÕES, NO GERENCIADO DE SERVIDORES ENTRE NAS PROPRIEDADES DE DB_TESTE.
         /// PEGUE A CADEIA DE CONEXAO SUBSTITUIA NA STRING ABAIXO.
@@ -45,15 +45,21 @@ namespace CRUDPadaria
                 SqlCommand oComando = new SqlCommand(pComando);
                 conexao.Open();
                 oComando.Connection = conexao;
-                oComando.ExecuteNonQuery();
-                SqlDataReader oReader = oComando.ExecuteReader();
+
+                if (bEhConsulta)
+                    return oComando.ExecuteReader();                
+                else
+                    oComando.ExecuteNonQuery();
+                
+
+
 
                 //SqlCommand oCmd = new SqlCommand(sCmd);
                 //Conexao.Open();
                 //oCmd.Connection = Conexao;
                 //oCmd.ExecuteNonQuery();
                 //leitor = oCmd.ExecuteReader();
-                return oReader;
+                return null;
 
 
             }
