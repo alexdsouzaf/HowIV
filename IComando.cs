@@ -13,6 +13,8 @@ namespace CRUDPadaria
     /// </summary>
     interface ICadastro
     {
+        clsProduto clsProduto { get; set; }
+
         /// <summary>
         /// METODO PARA GRAVAR O PRODUTO NO BANCO
         /// </summary>

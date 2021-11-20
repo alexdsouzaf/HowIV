@@ -13,7 +13,25 @@ namespace CRUDPadaria
     {
 
         public SqlCommand oComando = new SqlCommand();
-        
+
+        public HowIV.frmProduto frmProduto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal clsValidacoesSQL clsValidacoesSQL
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        clsProduto ICadastro.clsProduto { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         /// <summary>
         /// ALTERA SOMENTE DESCRICAO E VALOR
         /// </summary>

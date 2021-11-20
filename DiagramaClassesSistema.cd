@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CRUDPadaria.Util">
+    <Position X="3" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABEAAQAAAAAAAAAAgAAAAICAAAAAQAAAAAQAAAAA=</HashCode>
+      <FileName>Util.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="clsProduto" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CRUDPadaria.clsProduto">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAABFAAgAAAAAAAAAAAAAAAAQBAAAgAAAAAAA=</HashCode>
+      <FileName>clsProduto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmProduto" />
+      <Property Name="clsValidacoesSQL" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CRUDPadaria.clsValidacoesSQL">
+    <Position X="0.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAIAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>clsValidacoesSQL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HowIV.frmProduto" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gECYAAhISCBAoBCAAGiCUAACEACgQBlAQQCQAhkBDAE=</HashCode>
+      <FileName>frmProduto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HowIV.frmMenu" Collapsed="true">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAACCAAAAAAAACAAAACAAAgAAABABAQAAAAAAA=</HashCode>
+      <FileName>frmMenu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="frmProduto" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="CRUDPadaria.ICadastro">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABFAAgAAAAAAAAAAACAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>IComando.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="clsProduto" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -16,6 +16,15 @@ namespace HowIV
         {
             InitializeComponent();
         }
+
+        public frmProduto frmProduto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         private void frmMenu_Load(object sender, EventArgs e)
         {
             //grdMenu.Rows.Add("ESTOQUE");

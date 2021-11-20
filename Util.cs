@@ -14,6 +14,14 @@ namespace CRUDPadaria
     {
         public static SqlConnection conexao { get; set; }
 
+        internal clsProduto clsProduto
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public static bool bEhConsulta = false;
         /// <summary>
         /// PARA USAR O BANCO LOCAL DÊ DUPLO CLIQUE EM DB_TESTE NO GERENCIADOR DE SOLUÇÕES, NO GERENCIADO DE SERVIDORES ENTRE NAS PROPRIEDADES DE DB_TESTE.
