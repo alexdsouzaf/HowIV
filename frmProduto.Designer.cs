@@ -30,7 +30,9 @@ namespace HowIV
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtIdFiltro = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnConsultar = new System.Windows.Forms.ToolStripButton();
             this.pnlGrid = new System.Windows.Forms.Panel();
@@ -43,7 +45,6 @@ namespace HowIV
             this.VAL_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblEst = new System.Windows.Forms.Label();
             this.txtEst = new System.Windows.Forms.TextBox();
@@ -65,10 +66,10 @@ namespace HowIV
             this.txtId = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.grpFiltros.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.pnlGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdProduto)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +87,7 @@ namespace HowIV
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.grpFiltros);
             this.tabPage1.Controls.Add(this.toolStrip1);
             this.tabPage1.Controls.Add(this.pnlGrid);
             this.tabPage1.Controls.Add(this.statusStrip1);
@@ -99,22 +100,40 @@ namespace HowIV
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
+            // grpFiltros
+            // 
+            this.grpFiltros.Controls.Add(this.label1);
+            this.grpFiltros.Controls.Add(this.txtIdFiltro);
+            this.grpFiltros.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grpFiltros.Location = new System.Drawing.Point(3, 3);
+            this.grpFiltros.Name = "grpFiltros";
+            this.grpFiltros.Size = new System.Drawing.Size(487, 56);
+            this.grpFiltros.TabIndex = 6;
+            this.grpFiltros.TabStop = false;
+            this.grpFiltros.Text = "Filtros";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 22);
+            this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(474, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "da pra pensar em colocar alguns filtros aqui em cima para poder fazer uma consult" +
-    "a mais especifica";
+            this.label1.Size = new System.Drawing.Size(18, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "ID";
+            // 
+            // txtIdFiltro
+            // 
+            this.txtIdFiltro.Location = new System.Drawing.Point(6, 30);
+            this.txtIdFiltro.Name = "txtIdFiltro";
+            this.txtIdFiltro.Size = new System.Drawing.Size(43, 20);
+            this.txtIdFiltro.TabIndex = 8;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnConsultar});
-            this.toolStrip1.Location = new System.Drawing.Point(3, 49);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 62);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(487, 25);
             this.toolStrip1.TabIndex = 4;
@@ -133,9 +152,9 @@ namespace HowIV
             // 
             this.pnlGrid.Controls.Add(this.grdProduto);
             this.pnlGrid.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlGrid.Location = new System.Drawing.Point(3, 74);
+            this.pnlGrid.Location = new System.Drawing.Point(3, 87);
             this.pnlGrid.Name = "pnlGrid";
-            this.pnlGrid.Size = new System.Drawing.Size(487, 189);
+            this.pnlGrid.Size = new System.Drawing.Size(487, 176);
             this.pnlGrid.TabIndex = 2;
             // 
             // grdProduto
@@ -156,7 +175,7 @@ namespace HowIV
             this.grdProduto.Name = "grdProduto";
             this.grdProduto.ReadOnly = true;
             this.grdProduto.RowTemplate.Height = 25;
-            this.grdProduto.Size = new System.Drawing.Size(487, 189);
+            this.grdProduto.Size = new System.Drawing.Size(487, 176);
             this.grdProduto.TabIndex = 0;
             this.grdProduto.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdProduto_CellDoubleClick);
             // 
@@ -209,23 +228,16 @@ namespace HowIV
             this.Column1.HeaderText = "ESTOQUE";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus});
             this.statusStrip1.Location = new System.Drawing.Point(3, 263);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
             this.statusStrip1.Size = new System.Drawing.Size(487, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(109, 17);
-            this.lblStatus.Text = "status de progresso";
             // 
             // tabPage2
             // 
@@ -260,6 +272,7 @@ namespace HowIV
             this.lblEst.Size = new System.Drawing.Size(46, 13);
             this.lblEst.TabIndex = 14;
             this.lblEst.Text = "Estoque";
+            this.lblEst.Visible = false;
             // 
             // txtEst
             // 
@@ -267,6 +280,7 @@ namespace HowIV
             this.txtEst.Name = "txtEst";
             this.txtEst.Size = new System.Drawing.Size(61, 20);
             this.txtEst.TabIndex = 13;
+            this.txtEst.Visible = false;
             // 
             // toolStrip2
             // 
@@ -421,12 +435,12 @@ namespace HowIV
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.grpFiltros.ResumeLayout(false);
+            this.grpFiltros.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.pnlGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdProduto)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
@@ -442,9 +456,7 @@ namespace HowIV
         private System.Windows.Forms.Panel pnlGrid;
         private System.Windows.Forms.DataGridView grdProduto;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btnConsultar;
         private System.Windows.Forms.Label lblObs;
@@ -463,6 +475,8 @@ namespace HowIV
         private System.Windows.Forms.ToolStripButton btnGravar;
         private System.Windows.Forms.ToolStripButton btnAlterar;
         private System.Windows.Forms.ToolStripButton btnRemover;
+        private System.Windows.Forms.Label lblEst;
+        private System.Windows.Forms.TextBox txtEst;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn DES_PRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn OBS;
@@ -470,7 +484,8 @@ namespace HowIV
         private System.Windows.Forms.DataGridViewTextBoxColumn DATA_CADASTRO;
         private System.Windows.Forms.DataGridViewTextBoxColumn VAL_PRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Label lblEst;
-        private System.Windows.Forms.TextBox txtEst;
+        private System.Windows.Forms.GroupBox grpFiltros;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIdFiltro;
     }
 }

@@ -85,7 +85,7 @@ namespace CRUDPadaria
         /// CONSULTA OS PRODUTOS GRAVADOS
         /// </summary>
         /// <param name="pId"></param>
-        public SqlDataReader ConsultarProduto(string pId = "")
+        public SqlDataReader ConsultarProduto(string pId = "" )
         {
             try
             {
@@ -96,12 +96,13 @@ namespace CRUDPadaria
                     sbSQL.AppendLine($"WHERE ID = {pId}");
 
 
+
                 return Util.ExecutaSQL(sbSQL.ToString());
             }
             catch (Exception ex)
             {
                 Util.ErroComandos(ex.Message);
-                throw;
+                throw null;
             }
             //throw new NotImplementedException();
         }

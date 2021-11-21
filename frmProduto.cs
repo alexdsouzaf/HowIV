@@ -30,7 +30,9 @@ namespace HowIV
         {
             clsProduto oProduto = new clsProduto();
             Util.bEhConsulta = true;
-            var oRetorno = oProduto.ConsultarProduto(txtId.Text);
+
+            var oRetorno = oProduto.ConsultarProduto(txtIdFiltro.Text);
+
             grdProduto.Rows.Clear();
             while (oRetorno.Read())
             {
@@ -46,6 +48,7 @@ namespace HowIV
             }
             //Util.AcaoConcluida();
             Util.conexao.Close();
+            
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -66,8 +69,6 @@ namespace HowIV
             Util.conexao.Close();
             LimparCampos();
         }
-
- 
 
         private void LimparCampos()
         {
@@ -108,5 +109,7 @@ namespace HowIV
             btnAlterar.Visible = false;
             btnGravar.Visible = true;
         }
+
+
     }
 }
