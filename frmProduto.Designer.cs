@@ -280,6 +280,7 @@ namespace HowIV
             this.txtEst.Name = "txtEst";
             this.txtEst.Size = new System.Drawing.Size(61, 20);
             this.txtEst.TabIndex = 13;
+            this.txtEst.Text = "1";
             this.txtEst.Visible = false;
             // 
             // toolStrip2

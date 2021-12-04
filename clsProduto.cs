@@ -115,7 +115,7 @@ namespace CRUDPadaria
         /// <param name="pValor"></param>
         /// <param name="pVinculoEstoque"></param>
         /// <param name="pQuantidade"></param>
-        public void GravarProduto(string pNome = "", string pDescricao = "", string pValor = "", string pVinculoEstoque = "", int pQuantidade = 0)
+        public void GravarProduto(string pNome = "", string pDescricao = "", string pValor = "", int pVinculoEstoque = 1, int pQuantidade = 0)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace CRUDPadaria
                 sbSQL.AppendLine("INSERT INTO PRODUTO");
                 sbSQL.AppendLine("(NOME,OBS,QUANTIDADE, DATA_CADASTRO, VAL_UN, VINCULO_ESTOQUE)");
                 sbSQL.AppendLine("VALUES");
-                sbSQL.AppendLine($"('{pNome}','{pDescricao}',{pQuantidade},'{data}',{pValor},{pVinculoEstoque});");
+                sbSQL.AppendLine($"('{pNome}','{pDescricao}',{pQuantidade},'{data}',{pValor},'{pVinculoEstoque}');");
                                 
                 Util.ExecutaSQL(sbSQL.ToString());
             }

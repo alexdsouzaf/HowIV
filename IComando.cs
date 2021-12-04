@@ -23,7 +23,7 @@ namespace CRUDPadaria
         /// <param name="pValor"></param>
         /// <param name="pVinculoEstoque"></param>
         /// <param name="pQuantidade"></param>
-        void GravarProduto(string pNome = "", string pDescricao = "", string pValor = "", string pVinculoEstoque = "", int pQuantidade = 0);
+        void GravarProduto(string pNome = "", string pDescricao = "", string pValor = "", int pVinculoEstoque = 1, int pQuantidade = 0);
         /// <summary>
         /// METODO PARA ALTERAR O PRODUTO NO BANCO
         /// </summary>

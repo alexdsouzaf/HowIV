@@ -55,7 +55,7 @@ namespace HowIV
         {
 
             clsProduto oProduto = new clsProduto();
-            oProduto.GravarProduto(txtDesc.Text, txtObs.Text, txtVal.Text, txtEst.Text, Convert.ToInt32(txtQuant.Text));
+            oProduto.GravarProduto(txtDesc.Text, txtObs.Text, txtVal.Text, Convert.ToInt32(txtEst.Text), Convert.ToInt32(txtQuant.Text));
             Util.AcaoConcluida();
             Util.conexao.Close();
             LimparCampos();
